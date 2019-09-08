@@ -4,9 +4,9 @@
   "description": "portfolio in elm",
   "main": "src/Main.elm",
   "scripts": {
-    "make": "elm make -- src/Main.elm --output=index.html",
+    "make": "elm make -- src/Main.elm --output=dist/main.js",
     "test": "npm run test",
-    "live": "elm-live src/Main.elm --open -r -v"
+    "live": "elm-live src/Main.elm  --open -r -v -- --output=dist/main.js "
   },
   "keywords": [
     "portfolio"
