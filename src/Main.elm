@@ -17,6 +17,7 @@ init =
   0
 
 
+
 -- UPDATE
 
 type Msg = Increment | Decrement
@@ -35,8 +36,10 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-  div [class "pa2 b-red"]
-    [ button [ onClick Decrement ] [ text "-" ]
-    , div [] [ text (String.fromInt model) ]
-    , button [ onClick Increment ] [ text "+" ]
+  div [class "pa2 b-red container"]
+    [ div [ class "header item"][text "header1"],
+      div [class "sidenav item"][
+        text "sidenav2"
+    ],
+    div[ class "content item"] [ text "main content3"]
     ]
