@@ -36,10 +36,26 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-  div [class "pa2 b-red container"]
-    [ div [ class "header item"][text "header1"],
+  div [class "container"]
+    [ div [ class "header item"][
+      div[class "header-name"][text "SIDDHARTH"],
+      div [class "header-menu"] [
+        div [class "header-menu-item"][
+          text "About"
+        ],
+        div [class "header-menu-item"][
+          text "Work"
+        ],
+        div [class "header-menu-item"][
+          text "Contact"
+        ],
+        div [class "header-menu-item"][
+          text "Random"
+        ]
+      ]
+    ],
       div [class "sidenav item"][
-        text "sidenav2"
+        div [ class "sidenav-text"][ text "Full stack developer, Free agent."]
     ],
     div[ class "content item"] [ text "main content3"]
     ]

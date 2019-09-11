@@ -4829,7 +4829,7 @@ var author$project$Main$view = function (model) {
 		elm$html$Html$div,
 		_List_fromArray(
 			[
-				elm$html$Html$Attributes$class('pa2 b-red container')
+				elm$html$Html$Attributes$class('container')
 			]),
 		_List_fromArray(
 			[
@@ -4841,7 +4841,65 @@ var author$project$Main$view = function (model) {
 					]),
 				_List_fromArray(
 					[
-						elm$html$Html$text('header1')
+						A2(
+						elm$html$Html$div,
+						_List_fromArray(
+							[
+								elm$html$Html$Attributes$class('header-name')
+							]),
+						_List_fromArray(
+							[
+								elm$html$Html$text('SIDDHARTH')
+							])),
+						A2(
+						elm$html$Html$div,
+						_List_fromArray(
+							[
+								elm$html$Html$Attributes$class('header-menu')
+							]),
+						_List_fromArray(
+							[
+								A2(
+								elm$html$Html$div,
+								_List_fromArray(
+									[
+										elm$html$Html$Attributes$class('header-menu-item')
+									]),
+								_List_fromArray(
+									[
+										elm$html$Html$text('About')
+									])),
+								A2(
+								elm$html$Html$div,
+								_List_fromArray(
+									[
+										elm$html$Html$Attributes$class('header-menu-item')
+									]),
+								_List_fromArray(
+									[
+										elm$html$Html$text('Work')
+									])),
+								A2(
+								elm$html$Html$div,
+								_List_fromArray(
+									[
+										elm$html$Html$Attributes$class('header-menu-item')
+									]),
+								_List_fromArray(
+									[
+										elm$html$Html$text('Contact')
+									])),
+								A2(
+								elm$html$Html$div,
+								_List_fromArray(
+									[
+										elm$html$Html$Attributes$class('header-menu-item')
+									]),
+								_List_fromArray(
+									[
+										elm$html$Html$text('Random')
+									]))
+							]))
 					])),
 				A2(
 				elm$html$Html$div,
@@ -4851,7 +4909,16 @@ var author$project$Main$view = function (model) {
 					]),
 				_List_fromArray(
 					[
-						elm$html$Html$text('sidenav2')
+						A2(
+						elm$html$Html$div,
+						_List_fromArray(
+							[
+								elm$html$Html$Attributes$class('sidenav-text')
+							]),
+						_List_fromArray(
+							[
+								elm$html$Html$text('Full stack developer, Free agent.')
+							]))
 					])),
 				A2(
 				elm$html$Html$div,

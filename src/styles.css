@@ -78,17 +78,11 @@ html {
 }
 
 .container {
-  padding: 12px;
-  background: #f8f8f8;
   display: inline-grid;
-  grid-template-rows: 1fr 4fr;
+  grid-template-rows: 10% 90%;
   grid-template-columns: 1fr 4fr;
   width: 100%;
-  height: 98vh;
-}
-
-.item {
-  border: solid 1px red;
+  height: 100vh;
 }
 
 .header {
@@ -96,6 +90,30 @@ html {
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 2;
+  border-bottom: solid 1px #f8f8f8;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-column-gap: 40%;
+  border-bottom: solid 1px #ddd;
+}
+
+.header-name {
+  font-weight: 700;
+  padding: 24px;
+  font-size: 1.4rem;
+  color: #606060;
+}
+
+.header-menu {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.header-menu .header-menu-item {
+  padding: 24px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #606060;
 }
 
 .sidenav {
@@ -103,6 +121,13 @@ html {
   grid-column-end: 2;
   grid-row-start: 2;
   grid-row-end: 3;
+  border-right: solid 1px #ddd;
+  padding: 12px;
+}
+
+.sidenav-text {
+  font-weight: 700;
+  font-size: 1.05rem;
 }
 
 .content {
