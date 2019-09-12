@@ -4543,6 +4543,14 @@ var author$project$Main$init = {
 				_Utils_Tuple2('Ballgame', 'https://siddarthvader.github.io/ballgame/'),
 				_Utils_Tuple2('Fee Management System', 'https://github.com/siddarthvader/sms/tree/master'),
 				_Utils_Tuple2('Sports Fest Site', 'https://github.com/siddarthvader/mst/tree/master')
+			])),
+	profile: elm$core$Dict$fromList(
+		_List_fromArray(
+			[
+				_Utils_Tuple2('src/img/github-logo.png', 'https://github.com/siddarthvader'),
+				_Utils_Tuple2('src/img/stack-logo.png', 'http://stackoverflow.com/users/2439835/siddharth'),
+				_Utils_Tuple2('src/img/upwork-logo.png', 'https://www.upwork.com/freelancers/~016fec88e43102b929?viewMode=1'),
+				_Utils_Tuple2('src/img/npm-logo.png', 'https://www.npmjs.com/~siddarthvader')
 			]))
 };
 var author$project$Main$update = F2(
@@ -5052,7 +5060,47 @@ var author$project$Main$renderLinks = function (lst) {
 		elm$html$Html$div,
 		_List_fromArray(
 			[
-				elm$html$Html$Attributes$class('name')
+				elm$html$Html$Attributes$class('sidenav-links')
+			]),
+		A2(
+			elm$core$List$map,
+			link,
+			elm$core$Dict$toList(lst)));
+};
+var elm$html$Html$img = _VirtualDom_node('img');
+var elm$html$Html$Attributes$src = function (url) {
+	return A2(
+		elm$html$Html$Attributes$stringProperty,
+		'src',
+		_VirtualDom_noJavaScriptOrHtmlUri(url));
+};
+var author$project$Main$renderSideFooter = function (lst) {
+	var link = function (_n0) {
+		var key = _n0.a;
+		var value = _n0.b;
+		return A2(
+			elm$html$Html$a,
+			_List_fromArray(
+				[
+					elm$html$Html$Attributes$href(value),
+					elm$html$Html$Attributes$class('sidenav-footer-item')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					elm$html$Html$img,
+					_List_fromArray(
+						[
+							elm$html$Html$Attributes$src(key)
+						]),
+					_List_Nil)
+				]));
+	};
+	return A2(
+		elm$html$Html$div,
+		_List_fromArray(
+			[
+				elm$html$Html$Attributes$class('sidenav-footer')
 			]),
 		A2(
 			elm$core$List$map,
@@ -5154,7 +5202,8 @@ var author$project$Main$view = function (model) {
 							[
 								elm$html$Html$text('Full stack developer, Free agent.')
 							])),
-						author$project$Main$renderLinks(model.links)
+						author$project$Main$renderLinks(model.links),
+						author$project$Main$renderSideFooter(model.profile)
 					])),
 				A2(
 				elm$html$Html$div,

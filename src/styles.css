@@ -93,7 +93,6 @@ html {
   border-bottom: solid 1px #f8f8f8;
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-column-gap: 40%;
   border-bottom: solid 1px #ddd;
 }
 
@@ -123,11 +122,38 @@ html {
   grid-row-end: 3;
   border-right: solid 1px #ddd;
   padding: 12px;
+  display: grid;
+  grid-template-rows: 1fr 3fr 1fr;
 }
 
-.sidenav-text {
+.sidenav .sidenav-text {
   font-weight: 700;
   font-size: 1.05rem;
+  padding: 12px;
+}
+
+.sidenav .sidenav-links {
+  padding: 12px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sidenav .sidenav-links a {
+  word-break: break-word;
+  margin: 8px;
+}
+
+.sidenav .sidenav-footer {
+  padding: 12px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  align-items: self-end;
+}
+
+.sidenav .sidenav-footer .sidenav-footer-item {
+  width: 24px;
+  height: 24px;
 }
 
 .content {
