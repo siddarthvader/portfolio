@@ -39,7 +39,7 @@ init = {
         }
 -- UPDATE
 
-type Msg = Increment | Decrement
+type Msg = Increment | Decrement                                 
 
 update : Msg -> Model -> Model
 update msg model= model
@@ -68,8 +68,24 @@ view model =
     ],
       div [class "sidenav item"][
         div [ class "sidenav-text"][ text "Full stack developer, Free agent."]
-      , renderLinks model.links
-      , renderSideFooter model.profile
+      -- , renderLinks model.links
+      , div [ class "cube-container" ]
+        [ div [ id "cube" ]
+            [ div [ class "front" ]
+                [ text "Full stack developer" ]
+            , div [ class "back" ]
+                [ text "HERE AND NOW" ]
+            , div [ class "right" ]
+                [ text "Kindness" ]
+            , div [ class "left" ]
+                [ text "Mother earth" ]
+            , div [ class "top" ]
+                [ text "Open Source" ]
+            , div [ class "bottom" ]
+                [ text "bottom" ]
+            ]
+        ]
+        , renderSideFooter model.profile
       
     ],
     div[ class "content item"] [ text "main content3"]
@@ -88,7 +104,7 @@ renderLinks lst =
 renderSideFooter: Dict String String -> Html msg
 renderSideFooter lst =
       let link (key,value) = 
-            a [ href value, class "sidenav-footer-item" ]
+            a [ href value, class "sidenav-footer-item",target "_blank" ]
               [ img [ src key ]
                   []
               ]

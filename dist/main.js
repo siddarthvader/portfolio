@@ -5022,8 +5022,7 @@ var elm$virtual_dom$VirtualDom$toHandlerInt = function (handler) {
 };
 var elm$html$Html$a = _VirtualDom_node('a');
 var elm$html$Html$div = _VirtualDom_node('div');
-var elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
-var elm$html$Html$text = elm$virtual_dom$VirtualDom$text;
+var elm$html$Html$img = _VirtualDom_node('img');
 var elm$json$Json$Encode$string = _Json_wrap;
 var elm$html$Html$Attributes$stringProperty = F2(
 	function (key, string) {
@@ -5039,41 +5038,13 @@ var elm$html$Html$Attributes$href = function (url) {
 		'href',
 		_VirtualDom_noJavaScriptUri(url));
 };
-var elm$html$Html$Attributes$target = elm$html$Html$Attributes$stringProperty('target');
-var author$project$Main$renderLinks = function (lst) {
-	var link = function (_n0) {
-		var key = _n0.a;
-		var value = _n0.b;
-		return A2(
-			elm$html$Html$a,
-			_List_fromArray(
-				[
-					elm$html$Html$Attributes$href(value),
-					elm$html$Html$Attributes$target('_blank')
-				]),
-			_List_fromArray(
-				[
-					elm$html$Html$text(key)
-				]));
-	};
-	return A2(
-		elm$html$Html$div,
-		_List_fromArray(
-			[
-				elm$html$Html$Attributes$class('sidenav-links')
-			]),
-		A2(
-			elm$core$List$map,
-			link,
-			elm$core$Dict$toList(lst)));
-};
-var elm$html$Html$img = _VirtualDom_node('img');
 var elm$html$Html$Attributes$src = function (url) {
 	return A2(
 		elm$html$Html$Attributes$stringProperty,
 		'src',
 		_VirtualDom_noJavaScriptOrHtmlUri(url));
 };
+var elm$html$Html$Attributes$target = elm$html$Html$Attributes$stringProperty('target');
 var author$project$Main$renderSideFooter = function (lst) {
 	var link = function (_n0) {
 		var key = _n0.a;
@@ -5083,7 +5054,8 @@ var author$project$Main$renderSideFooter = function (lst) {
 			_List_fromArray(
 				[
 					elm$html$Html$Attributes$href(value),
-					elm$html$Html$Attributes$class('sidenav-footer-item')
+					elm$html$Html$Attributes$class('sidenav-footer-item'),
+					elm$html$Html$Attributes$target('_blank')
 				]),
 			_List_fromArray(
 				[
@@ -5107,6 +5079,9 @@ var author$project$Main$renderSideFooter = function (lst) {
 			link,
 			elm$core$Dict$toList(lst)));
 };
+var elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
+var elm$html$Html$text = elm$virtual_dom$VirtualDom$text;
+var elm$html$Html$Attributes$id = elm$html$Html$Attributes$stringProperty('id');
 var author$project$Main$view = function (model) {
 	return A2(
 		elm$html$Html$div,
@@ -5202,7 +5177,84 @@ var author$project$Main$view = function (model) {
 							[
 								elm$html$Html$text('Full stack developer, Free agent.')
 							])),
-						author$project$Main$renderLinks(model.links),
+						A2(
+						elm$html$Html$div,
+						_List_fromArray(
+							[
+								elm$html$Html$Attributes$class('cube-container')
+							]),
+						_List_fromArray(
+							[
+								A2(
+								elm$html$Html$div,
+								_List_fromArray(
+									[
+										elm$html$Html$Attributes$id('cube')
+									]),
+								_List_fromArray(
+									[
+										A2(
+										elm$html$Html$div,
+										_List_fromArray(
+											[
+												elm$html$Html$Attributes$class('front')
+											]),
+										_List_fromArray(
+											[
+												elm$html$Html$text('Full stack developer')
+											])),
+										A2(
+										elm$html$Html$div,
+										_List_fromArray(
+											[
+												elm$html$Html$Attributes$class('back')
+											]),
+										_List_fromArray(
+											[
+												elm$html$Html$text('HERE AND NOW')
+											])),
+										A2(
+										elm$html$Html$div,
+										_List_fromArray(
+											[
+												elm$html$Html$Attributes$class('right')
+											]),
+										_List_fromArray(
+											[
+												elm$html$Html$text('Kindness')
+											])),
+										A2(
+										elm$html$Html$div,
+										_List_fromArray(
+											[
+												elm$html$Html$Attributes$class('left')
+											]),
+										_List_fromArray(
+											[
+												elm$html$Html$text('Mother earth')
+											])),
+										A2(
+										elm$html$Html$div,
+										_List_fromArray(
+											[
+												elm$html$Html$Attributes$class('top')
+											]),
+										_List_fromArray(
+											[
+												elm$html$Html$text('Open Source')
+											])),
+										A2(
+										elm$html$Html$div,
+										_List_fromArray(
+											[
+												elm$html$Html$Attributes$class('bottom')
+											]),
+										_List_fromArray(
+											[
+												elm$html$Html$text('bottom')
+											]))
+									]))
+							])),
 						author$project$Main$renderSideFooter(model.profile)
 					])),
 				A2(
